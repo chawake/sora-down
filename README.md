@@ -28,10 +28,10 @@
 
 ### 1. 先决条件
 
--   已安装 [Docker](https://www.docker.com/get-started) 和 [Git](https://git-scm.com/downloads)。
+-   已安装 Docker 或 Python
 
 ### 2. 获取 OpenAI 认证凭据
-这是最关键的一步，你需要获取 `SORA_AUTH_TOKEN` (短期有效) 和 `SORA_REFRESH_TOKEN` (长期有效) 以实现自动续期。
+这是最关键的一步，你需要获取 `SORA_AUTH_TOKEN` (短期有效) 或 `SORA_REFRESH_TOKEN` (长期有效) 以实现自动续期。
 
 #### 方法一 (推荐): Android (Root) + 抓包
 **此方法需要一台已 Root 的 Android 设备，并具备一定的动手能力。**
@@ -140,7 +140,7 @@
 
 | 变量名             | 是否必须                           | 描述                                                                                                                              |
 | ------------------ |--------------------------------| --------------------------------------------------------------------------------------------------------------------------------- |
-| `SORA_AUTH_TOKEN`  | **是** (或 `SORA_REFRESH_TOKEN`) | 用于向 Sora API 发出请求的授权令牌 (Access Token)。如果留空但提供了 `SORA_REFRESH_TOKEN`，程序启动时会自动获取。                  |
+| `SORA_AUTH_TOKEN`  | **是** | 用于向 Sora API 发出请求的授权令牌 (Access Token)。如果留空但提供了 `SORA_REFRESH_TOKEN`，程序启动时会自动获取。                  |
 | `SORA_REFRESH_TOKEN` | **否** (为实现自动续期)                | 用于在 `SORA_AUTH_TOKEN` 过期时刷新它的令牌 (Refresh Token)。                                                                       |
 | `SORA_CLIENT_ID`   | **否** (为实现自动续期)                | OpenAI OAuth 客户端ID，在抓包时与 `refresh_token` 一起获取。                                                                        |
 | `APP_ACCESS_TOKEN` | 否                              | 用于保护此 Web 服务的访问令牌。如果设置，前端页面会要求输入此令牌。                                                                 |
